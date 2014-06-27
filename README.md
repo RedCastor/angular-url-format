@@ -43,6 +43,6 @@ Available formatting options:
  * po(r)t
  * pa(t)hname
  * (h)ash
- * (p)arams
+ * param(s)
 
 ## Additional notes ##
