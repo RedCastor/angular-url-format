@@ -32,7 +32,7 @@ In controllers (or directives, services, anywhere)
 
 The result should be the same in both cases:
 ```
-  Time passed: usabilitytools.com
+  Domain: usabilitytools.com
   Preformatted: usabilitytools.com
 ```
 
