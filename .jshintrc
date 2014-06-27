@@ -5,6 +5,7 @@
         "it": true,
         "expect": true,
         "beforeEach": true,
+        "afterEach": true,
         /* ngMock >> */
             "module": true,
             "inject": true,
