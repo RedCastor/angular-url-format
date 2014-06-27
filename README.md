@@ -46,9 +46,7 @@ Available formatting options are the same like properties of [window.location ob
  * pathname
  * search
  * hash 
- * path // node
- * query // node
+ * path
+ * query
 
-Lack of username and password attributes is caused by method of parsing. Parser use AnchorHTMLElement API and that two properties are not exposed by every browser. Fortunatelly, other parts of URL are resolved correctly even if user and password was set. Ex. for URL `https://user:password@host.com/`, the `hostname` part will be `host.com` and protocol `https:` in every browser.
-
-## Additional notes ##
+Lack of username and password attributes is caused by the method of parsing URL. Parser use HTMLAnchorElement API which don't expose those properties in every browser (ex. PhantomJS). Fortunatelly, other parts of URL are resolved correctly even if user and password were set. Ex. for URL `https://user:password@host.com/`, the `hostname` part will be always `host.com` and protocol `https:`.
