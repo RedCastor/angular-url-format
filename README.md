@@ -15,7 +15,6 @@ Add `angular-url-format` as your app dependency.
 In templates you can use
 ```
   <p>
-    Full URL: {{ url }}
     Domain: {{ url | url:'d' }}<br/>
     Preformatted: {{ urlPre }}
   </p>
