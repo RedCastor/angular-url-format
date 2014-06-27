@@ -1,54 +1,49 @@
-angular-time-format
+angular-url-format
 ===================
 
-AngularJS filter for formatting time.
+AngularJS filter for formatting url.
 
 ## Usage ##
-Add `angular-time-format` as your app dependency.
+Add `angular-url-format` as your app dependency.
 
 ```
   angular.module('myModule', [
-    angular-time-format'
+    angular-url-format'
   ]);
 ```
 
 In templates you can use
 ```
   <p>
-    Time passed: {{ passed | time:'hh:mm:ss:sss' }}<br/>
-    Preformatted: {{ passedPre }}
+    Full URL: {{ url }}
+    Domain: {{ url | url:'d' }}<br/>
+    Preformatted: {{ urlPre }}
   </p>
 ```
 
 In controllers (or directives, services, anywhere)
 ```
   angular.module('myModule').controller('exampleCtrl', function($scope, $filter) {
-    var timeFilter = $filter('time');
+    var timeFilter = $filter('url');
     
-    $scope.passed = 123456789;
-    $scope.passedPre = timeFilter($scope.passed, 'hh:mm:ss:sss');
+    $scope.url = 'http://usabilitytools.com/features-benefits/visitor-recording/;
+    $scope.urlPre = timeFilter($scope.url, 'd');
   });
 ```
 
 The result should be the same in both cases:
 ```
-  Time passed: 34:17:36:789
-  Preformatted: 34:17:36:789
+  Time passed: usabilitytools.com
+  Preformatted: usabilitytools.com
 ```
 
 ## Format options ##
 Available formatting options:
- * (y)ear
- * (d)ay
- * (h)our
- * (m)inute
- * (s)econd
- * `sss` for milliseconds
-
-Each number will be zero-padded to two places if you double letters (ex. `hh`, `mm`). Milliseconds are exception - they are padded to four places and you have to pass four letters (`ssss`).
-
-You can use every separator you want, but be careful. Passing format `h hours, m minutes` will produce unexpected results `34 34ours, 17 17inutes`. To avoid that, wrap every separator containing reserved letters in quotaion marks, like that `h 'hours', m 'minutes'`. (remember about escaping them in your code!). Now, the result should be nicely formatted `34 hours, 17 minutes`.
+ * (d)omain (origin)
+ * (p)rotocol
+ * po(r)t
+ * pa(t)hname
+ * (h)ash
+ * (p)arams
 
 ## Additional notes ##
-Note, that you can ommit some unit "levels", but it can produce weird results. If in example above you change format to `hh:mm`, result will be `34:1056`, because 17 minutes and 36 seconds it is 1056 seconds.
- 
