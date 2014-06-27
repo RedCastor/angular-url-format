@@ -15,7 +15,6 @@ Add `angular-url-format` as your app dependency.
 In templates you can use
 ```
   <p>
-    Full URL: {{ url }}
     Domain: {{ url | url:'d' }}<br/>
     Preformatted: {{ urlPre }}
   </p>
@@ -33,7 +32,7 @@ In controllers (or directives, services, anywhere)
 
 The result should be the same in both cases:
 ```
-  Time passed: usabilitytools.com
+  Domain: usabilitytools.com
   Preformatted: usabilitytools.com
 ```
 
@@ -44,6 +43,6 @@ Available formatting options:
  * po(r)t
  * pa(t)hname
  * (h)ash
- * (p)arams
+ * param(s)
 
 ## Additional notes ##
