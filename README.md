@@ -1,7 +1,7 @@
 angular-url-format
 ===================
 
-AngularJS filter for formatting url.
+AngularJS filter for formatting URLs.
 
 ## Usage ##
 Add `angular-url-format` as your app dependency.

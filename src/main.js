@@ -1,4 +1,4 @@
 angular
-	.module('angular-time-format', [
-		'angular-time-format.filter'
+	.module('angular-url-format', [
+		'angular-url-format.filter'
 	]);

@@ -1,11 +1,11 @@
 {
-  "name": "angular-time-format",
-  "version": "0.0.2",
-  "homepage": "https://github.com/erykpiast/angular-time-format",
+  "name": "angular-url-format",
+  "version": "0.0.1",
+  "homepage": "https://github.com/erykpiast/angular-url-format",
   "authors": [
     "Eryk Napierała <eryk.piast@gmail.com>"
   ],
-  "description": "AngularJS filter for formatting time",
+  "description": "AngularJS filter for formatting URLs.",
   "main": "src/main.module.js",
   "keywords": [
     "angular",
