@@ -15,7 +15,7 @@ Add `angular-url-format` as your app dependency.
 In templates you can use
 ```
   <p>
-    Domain: {{ url | url:'d' }}<br/>
+    Domain: {{ url | url:'hostname' }}<br/>
     Preformatted: {{ urlPre }}
   </p>
 ```
@@ -26,7 +26,7 @@ In controllers (or directives, services, anywhere)
     var timeFilter = $filter('url');
     
     $scope.url = 'http://usabilitytools.com/features-benefits/visitor-recording/;
-    $scope.urlPre = timeFilter($scope.url, 'd');
+    $scope.urlPre = timeFilter($scope.url, 'hostname');
   });
 ```
 
@@ -37,12 +37,18 @@ The result should be the same in both cases:
 ```
 
 ## Format options ##
-Available formatting options:
- * (d)omain (origin)
- * (p)rotocol
- * po(r)t
- * pa(t)hname
- * (h)ash
- * param(s)
+Available formatting options are the same like properties of [window.location object](https://developer.mozilla.org/en-US/docs/Web/API/Location "Location API Reference on Mozilla Developer Network"), plus some additional exposed by [Node.js URL object](http://nodejs.org/api/url.html "URL module documentation on nodejs.com"):
+ * href
+ * protocol
+ * host
+ * hostname
+ * port
+ * pathname
+ * search
+ * hash 
+ * path // node
+ * query // node
+
+Lack of username and password attributes is caused by method of parsing. Parser use AnchorHTMLElement API and that two properties are not exposed by every browser. Fortunatelly, other parts of URL are resolved correctly even if user and password was set. Ex. for URL `https://user:password@host.com/`, the `hostname` part will be `host.com` and protocol `https:` in every browser.
 
 ## Additional notes ##
